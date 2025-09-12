@@ -1,1 +1,4 @@
+[submodule "quakewatch-helm"]
+    path = quakewatch-helm
+    url = https://github.com/artalll/https://github.com/artalll/helm-repo
 
