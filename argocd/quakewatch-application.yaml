@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/artalll/DevOps_Final_Project.git
+    repoURL: https://github.com/artalll/DevOps_Final_Project
     targetRevision: helm-gitops
     path: quakewatch-gitops-chart
   destination:
