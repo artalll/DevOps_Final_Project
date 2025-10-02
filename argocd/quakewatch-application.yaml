@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/artalll/DevOps_Final_Project
-    targetRevision: helm-gitops
+    targetRevision: main
     path: quakewatch-gitops-chart
   destination:
     server: https://kubernetes.default.svc
