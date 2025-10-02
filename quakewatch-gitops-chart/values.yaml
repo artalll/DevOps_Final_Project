@@ -1,11 +1,4 @@
-
 replicaCount: 2
-
-autoscaling:
-  enabled: false
-  minReplicas: 2
-  maxReplicas: 5
-  targetCPUUtilizationPercentage: 80
 
 image:
   repository: artalll/quakewatch
@@ -16,4 +9,45 @@ service:
   type: ClusterIP
   port: 5000
 
-containerPort: 5000
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: quakewatch.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+env:
+  - name: FLASK_ENV
+    value: production
+
+configMap:
+  enabled: true
+  data:
+    API_KEY: your-api-key
+
+secret:
+  enabled: true
+  data:
+    SECRET_KEY: your-secret-key
+
+serviceAccount:
+  create: false
+  name: default
